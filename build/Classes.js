@@ -6,3 +6,9 @@ export class Pessoa {
         this.altura = altura;
     }
 }
+export class Objeto {
+    nome;
+    constructor(nome) {
+        this.nome = nome;
+    }
+}

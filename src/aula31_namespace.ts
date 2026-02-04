@@ -5,20 +5,68 @@
  * 
  */
 
-namespace Veiculos {
-    export abstract class Carro { // Para utilizar qualquer coisa que esteja dentro de um namespace fora do namespace, precisa utilizar "export"
-        nome: string
-        motor: Motores.Motor
+// Exemplo grande de uso de classes e namespace
 
-        constructor(nome: string) {
+namespace Veiculos {
+    export enum Cores {
+        branco = '#fff',
+        preto = '#000',
+        vermelho = '#f00', 
+        verde = '#0f0',
+        azul = '#00f'
+    }
+
+    abstract class Carro { // Para utilizar qualquer coisa que esteja dentro de um namespace fora do namespace, precisa utilizar "export"
+        private nome: string;
+        private motor: Motores.Motor;
+        private cor: Cores;
+
+        constructor(nome: string, motor: Motores.Motor, cor: Cores) {
             this.nome = nome; 
-            this.motor = new Motores.Motor(100, 3)
+            this.motor = motor
+            this.cor = cor;
+        }
+
+        public ligar() {
+            this.motor.liga = true;
+        }
+
+        public desligar() {
+            this.motor.liga = false;
+        }
+
+        public get minha_cor(): Cores {
+            return this.cor;
+        }
+
+        public get nome_carro(): string {
+            return this.nome;
+        }
+
+        public get estou_ligado() {
+            return (this.motor.liga?'Sim':'Não');
+        }
+
+        public get minha_pot(): number {
+            return this.motor.pot;
+        }
+    }
+
+    export class CarroEsportivo extends Carro {
+        constructor(nome: string, cor: Cores) {
+            super(nome, new Motores.Motor(500, 8, new Motores.Turbo(200)), cor)
+        }
+    }
+
+    export class CarroPopular extends Carro {
+        constructor(nome: string, cor: Cores) {
+            super(nome, new Motores.Motor(90, 3), cor)
         }
     }
 }
 
 namespace Motores {
-    class Turbo { // Essa classe só é utilizada dentro do namespace
+    export class Turbo { // Essa classe só é utilizada dentro do namespace
         private potencia: number;
 
         constructor(potencia: number) {
@@ -26,14 +74,14 @@ namespace Motores {
         }
 
         public get pot(): number {
-            return this.pot
+            return this.potencia;
         }
     }
 
     export class Motor {
-        public potencia: number;
-        private ligado: boolean
-        private cilindros: number
+        private potencia: number;
+        private ligado: boolean;
+        private cilindros: number;
 
         constructor(potencia: number, cilindros: number, turbo?: Turbo) {
             this.potencia = potencia + (turbo? turbo.pot:0); // Se tiver turbo, retorna o a potencia do turbo, senão retorna 0;
@@ -55,4 +103,23 @@ namespace Motores {
     }
 }
 
-// const carro1 = new Veiculos.Carro('HB20S')
+const carro1 = new Veiculos.CarroPopular('HB20S', Veiculos.Cores.azul)
+const carro2 = new Veiculos.CarroEsportivo('Dodge Challenger', Veiculos.Cores.preto)
+
+carro1.ligar();
+console.log(carro1.nome_carro);
+console.log(carro1.estou_ligado); 
+console.log(carro1.minha_cor);
+console.log(carro1.minha_pot);
+carro1.desligar();
+console.log(carro1.estou_ligado);
+
+console.log('\n');
+
+carro2.ligar();
+console.log(carro2.nome_carro);
+console.log(carro2.estou_ligado); 
+console.log(carro2.minha_cor);
+console.log(carro2.minha_pot);
+carro2.desligar();
+console.log(carro2.estou_ligado);
