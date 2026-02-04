@@ -1,6 +1,4 @@
 class Curso {
-    canal;
-    curso;
     constructor(canal, curso) {
         this.canal = canal;
         this.curso = curso;

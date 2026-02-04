@@ -16,9 +16,6 @@ var Veiculos;
         Cores["azul"] = "#00f";
     })(Cores = Veiculos.Cores || (Veiculos.Cores = {}));
     class Carro {
-        nome;
-        motor;
-        cor;
         constructor(nome, motor, cor) {
             this.nome = nome;
             this.motor = motor;
@@ -59,7 +56,6 @@ var Veiculos;
 var Motores;
 (function (Motores) {
     class Turbo {
-        potencia;
         constructor(potencia) {
             this.potencia = potencia;
         }
@@ -69,9 +65,6 @@ var Motores;
     }
     Motores.Turbo = Turbo;
     class Motor {
-        potencia;
-        ligado;
-        cilindros;
         constructor(potencia, cilindros, turbo) {
             this.potencia = potencia + (turbo ? turbo.pot : 0); // Se tiver turbo, retorna o a potencia do turbo, senão retorna 0;
             this.cilindros = cilindros;

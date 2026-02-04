@@ -36,9 +36,6 @@
  */
 // ----------------------------------------------------------------------------------------
 class ContaBancaria {
-    numero;
-    titular;
-    saldo;
     constructor(titular) {
         this.numero = this.gerar_numero();
         this.titular = titular;
@@ -80,8 +77,6 @@ class Teste extends ContaBancaria {
 // ----------------------------------------------------------------------------------------
 // Suponhamos que queiramos criar mais duas classes, de modo que uma seja uma conta para PJ e uma conta para PF.
 class ContaPF extends ContaBancaria {
-    // Essa classe herda TUDO de ContaBancaria
-    cpf;
     // Quando vamos fazer um construtor de uma subclasse, precisamos passar os mesmos parâmetros da super classe.
     constructor(titular, cpf) {
         // Mas também temos que passar os valores dos parâmetros que a super classe tem, para a super classe
@@ -108,8 +103,6 @@ class ContaPF extends ContaBancaria {
 // ----------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------
 class ContaPJ extends ContaBancaria {
-    // Herda tudo de ContaBancaria
-    cnpj;
     constructor(titular, cnpj) {
         super(titular);
         this.cnpj = cnpj;

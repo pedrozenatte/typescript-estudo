@@ -23,7 +23,6 @@ function f_teste2(valor, teste) {
 console.log(f_teste2(23, 'Teste'));
 // PODEMOS UTILIZAR O GENERICS EM UMA CLASSE
 class C_teste {
-    valor;
     constructor(valor) {
         this.valor = valor;
     }

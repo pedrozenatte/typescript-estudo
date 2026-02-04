@@ -60,3 +60,19 @@ let curso3: curso = {
 }
 
 console.log(curso3)
+
+/**
+ * O que significa “definir contratos de dados?
+ * Quando falamos:
+ * Interfaces e Types: definir contratos de dados
+ * quer dizer:
+ * “estabelecer como um objeto deve ser, independentemente de quem vai criá-lo ou onde ele será usado”.
+ * Ou seja:
+ * - forma
+ * - tipos
+ * - obrigações
+ * - opcionalidade
+ * 
+ * Não é “criar um objeto”, é definir as regras que ele deve seguir.
+ * 
+ */

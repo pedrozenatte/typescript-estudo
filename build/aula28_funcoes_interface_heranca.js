@@ -17,10 +17,6 @@ let curso2 = {
     pre_requisito: 'nada'
 };
 class Pessoa {
-    nome;
-    idade;
-    // Propriedade que obrigatoriamente precisa ter
-    comida;
     constructor(nome, idade, comida) {
         this.nome = nome;
         this.idade = idade;

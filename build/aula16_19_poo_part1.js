@@ -5,11 +5,6 @@
  * =================================
  */
 class Computador {
-    // Parâmetros da classe Computador
-    nome;
-    ram;
-    freq_cpu;
-    ligado;
     // Construtor (função, que chamaremos de método, porque é uma função de uma classe)
     constructor(nome, ram, freq_cpu) {
         this.nome = nome;
@@ -55,11 +50,6 @@ comp1.ram = -100; // Fora da classe, consegui atribuir um valor que nem faz sent
  */
 // Isso é válido para parâmetros e métodos 
 class Computadores {
-    // Parâmetros da classe Computador
-    nome;
-    ram;
-    freq_cpu;
-    ligado;
     // Construtor (função, que chamaremos de método, porque é uma função de uma classe)
     constructor(nome, ram, freq_cpu) {
         this.nome = nome;

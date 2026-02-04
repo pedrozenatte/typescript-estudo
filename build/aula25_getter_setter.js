@@ -25,9 +25,6 @@
  */
 // ----------------------------------------------------------------------------------------
 class ContaBancaria {
-    numero;
-    titular;
-    saldo;
     constructor(titular) {
         this.numero = this.gerar_numero();
         this.titular = titular;
@@ -67,7 +64,6 @@ class ContaBancaria {
 }
 // ----------------------------------------------------------------------------------------
 class ContaPF extends ContaBancaria {
-    cpf;
     constructor(titular, cpf) {
         super(titular);
         this.cpf = cpf;
@@ -89,7 +85,6 @@ class ContaPF extends ContaBancaria {
 // ----------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------------------------
 class ContaPJ extends ContaBancaria {
-    cnpj;
     constructor(titular, cnpj) {
         super(titular);
         this.cnpj = cnpj;

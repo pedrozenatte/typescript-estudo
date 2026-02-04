@@ -6,10 +6,6 @@
  *
  */
 class Conta {
-    // Vamos supor que queremos que o número da conta, além de privado, nunca mais seja alterado após ser criado no construtor, então colocaremos apenas para leitura
-    numero;
-    titular;
-    saldo;
     constructor(titular) {
         this.numero = this.gerar_numero();
         this.titular = titular;
